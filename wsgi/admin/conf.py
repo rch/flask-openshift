@@ -5,10 +5,6 @@ try:
     FREEZER_DESTINATION = os.path.join(os.getenv('OPENSHIFT_DATA_DIR'), 'frozen')
 except AttributeError:
     pass
-    
-if os.getenv('OPENSHIFT_POSTGRESQL_DB_HOST', os.getenv('PG_NAME')) is None:
-    print 'Configure PG_* environment variables, or run on open-shift.
-    sys.exit(0)
 
 # postgresql
 PG_HOST = os.getenv('OPENSHIFT_POSTGRESQL_DB_HOST', 'localhost')
