@@ -1,0 +1,13 @@
+#!/bin/bash
+# The logic to stop your application should be put in this script.
+
+source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
+$OPENSHIFT_DATA_DIR/nginx/sbin/nginx -s stop
+if [ -f $OPENSHIFT_TMP_DIR/uwsgi.pid ]; then
+    uwsgi --stop $OPENSHIFT_TMP_DIR/uwsgi.pid
+fi
+if [ -f $OPENSHIFT_TMP_DIR/celery.pid ]; then
+    uwsgi --stop $OPENSHIFT_TMP_DIR/celery.pid
+fi
+
+exit 0

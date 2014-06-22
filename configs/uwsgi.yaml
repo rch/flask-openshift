@@ -1,0 +1,6 @@
+uwsgi:
+    master: 1
+    socket: $OPENSHIFT_DIY_IP:15005
+    pidfile: $OPENSHIFT_TMP_DIR/uwsgi.pid
+    pythonpath: $OPENSHIFT_REPO_DIR/wsgi
+    module: $APP_NAME:app

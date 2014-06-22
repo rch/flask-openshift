@@ -1,0 +1,9 @@
+#!/bin/bash
+# The logic to start up your application should be put in this script.
+
+source $OPENSHIFT_DATA_DIR/virtualenv/bin/activate
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+export LC_LANG='en_US.UTF-8'
+nohup $OPENSHIFT_DATA_DIR/nginx/sbin/nginx -c $OPENSHIFT_DATA_DIR/nginx/conf/nginx.conf > $OPENSHIFT_DIY_LOG_DIR/server.log 2>&1 &
+nohup uwsgi --yaml $OPENSHIFT_DATA_DIR/configs/uwsgi.yaml -d $OPENSHIFT_DIY_LOG_DIR/flask.log

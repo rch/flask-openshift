@@ -1,0 +1,7 @@
+uWSGI
+Flask
+Frozen-Flask
+SQLAlchemy
+psycopg2
+msgpack-python
+Celery
