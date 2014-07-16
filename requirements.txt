@@ -5,3 +5,4 @@ SQLAlchemy
 psycopg2
 msgpack-python
 Celery
+Genshi
