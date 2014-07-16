@@ -1,5 +1,5 @@
 from flask_frozen import Freezer
-from admin import app
+from container import app
 
 
 build = Freezer(app)

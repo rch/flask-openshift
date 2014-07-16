@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+<html class="no-js lt-ie9" lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/"
+    ng-app="mgcrea.ngStrapDocs">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:py="http://genshi.edgewall.org/" ng-app="mgcrea.ngStrapDocs">
+<!--<![endif]-->
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Scratch</title>
+
+<!-- Sets initial viewport load and disables zooming  -->
+<meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- Set a shorter title for iOS6 devices when saved to home screen -->
+<meta name="apple-mobile-web-app-title" content="BootstrapSandbox" />
+
+<link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="${url_for('bootstrap.static', filename='css/bootstrap.min.css')}" />
+<link rel="stylesheet" href="${url_for('common.static', filename='css/font-awesome.min.css')}" />
+<link rel="stylesheet" href="${url_for('ngstrap.static', filename='css/libraries.min.css')}" />
+<link rel="stylesheet" href="${url_for('ngstrap.static', filename='css/angular-motion.min.css')}" />
+<link rel="stylesheet" href="${url_for('ngstrap.static', filename='css/bootstrap-additions.min.css')}" />
+
+<link rel="stylesheet"
+    href="${url_for('ngstrap.static', filename='css/main.min.css')}" />
+
+</head>
+
+<body ontouchstart="" ng-controller="MainCtrl">
+    <header class="navbar navbar-fixed-top" role="banner">
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="${url_for('admin.index')}">[ --- ]</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#/">Map</a></li>
+                <li><a href="#/">Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="continer" style="border-top:1px solid #bbb;border-bottom:1px solid #bbb">
+        <!-- ngInclude: 'aside/docs/aside.demo.html' -->
+        <div class="bs-docs-section" ng-controller="AsideDemoCtrl" style="margin:10px;">
+            <!-- Button to trigger a default aside with a scope as an object {title:'', content:'', etc.} -->
+            <button type="button" class="btn btn-primary"
+                data-placement="left"
+                data-animation="am-fade-and-slide-left"
+                data-container="body"
+                data-template="${url_for('admin.aside')}" bs-aside="aside">
+                Settings<br />
+            </button>
+        </div>
+    </div>
+    <script src="${url_for('angular.static', filename='js/angular.min.js')}"></script>
+    <script src="${url_for('angular.static', filename='js/angular-sanitize.min.js')}"></script>
+    <script src="${url_for('angular.static', filename='js/angular-animate.min.js')}"></script>
+    <script src="${url_for('angular.static', filename='js/angular-route.min.js')}"></script>
+    <script src="${url_for('ngstrap.static', filename='js/libraries.min.js')}"></script>
+    <script src="${url_for('ngstrap.static', filename='js/angular-strap.min.js')}"></script>
+    <script src="${url_for('ngstrap.static', filename='js/angular-strap.tpl.min.js')}"></script>
+    
+    <script src="${url_for('admin.static', filename='js/app.js')}"></script>
+
+</body>
+
+</html>
