@@ -1,4 +1,5 @@
 from flask import Blueprint
+from container.tasks import add_together
 
 bp = Blueprint('common', __name__, static_folder='static', template_folder='templates')
 
