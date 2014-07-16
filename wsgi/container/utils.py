@@ -1,4 +1,3 @@
-import pkgs
 import flask
 from celery import Celery
 import sqlite3.dbapi2 as sqlite3
@@ -18,6 +17,7 @@ def make_celery(app):
 
 
 def register_blueprints(app, mapping=None):
+    import pkgs
     app.register_blueprint(pkgs.admin.bp, url_prefix='/admin')
     app.register_blueprint(pkgs.angular.bp, url_prefix='/angular')
     app.register_blueprint(pkgs.common.bp, url_prefix='/common')
